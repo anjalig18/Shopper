@@ -1,0 +1,38 @@
+# Render.com deployment configuration
+services:
+  # Backend API
+  - type: web
+    name: shophub-api
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: PORT
+        value: 5000
+      - key: CORS_ORIGIN
+        sync: false
+    healthCheckPath: /api/health
+
+  # Frontend (Static Site)
+  - type: web
+    name: shophub-frontend
+    env: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: ./client/build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false
