@@ -355,22 +355,3 @@ npm run build        # Build frontend for production
 
 This project is licensed under the ISC License.
 
-## 👥 Authors
-
-- Your Name - Initial work
-
-## 🙏 Acknowledgments
-
-- MongoDB Atlas for database hosting
-- Razorpay for payment integration
-- React team for the amazing framework
-- Express.js community
-
-## 📞 Support
-
-For support, email your-email@example.com or open an issue in the repository.
-
----
-
-**Made with ❤️ using MERN Stack**
-# Shopper
