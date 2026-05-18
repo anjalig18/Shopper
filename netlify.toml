@@ -1,10 +1,11 @@
 [build]
   base = "client"
-  command = "npm install && CI=false npx react-scripts build"
+  command = "rm -rf node_modules && npm install && CI=false npm run build"
   publish = "build"
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_CONFIG_PRODUCTION = "false"
 
 [[redirects]]
   from = "/*"
