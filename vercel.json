@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "rm -rf node_modules/.cache && npm ci && npx react-scripts build",
   "outputDirectory": "build",
-  "framework": "create-react-app",
-  "installCommand": "npm install",
-  "devCommand": "npm start"
+  "framework": null,
+  "installCommand": "npm ci",
+  "devCommand": "npm start",
+  "env": {
+    "CI": "false",
+    "NPM_CONFIG_PRODUCTION": "false"
+  }
 }
